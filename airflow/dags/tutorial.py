@@ -1,3 +1,10 @@
+"""
+Tutorial on how to create Airflow Dags
+Usage:
+    python tutorial.py
+"""
+
+
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator 
 from datetime import datetime, timedelta
