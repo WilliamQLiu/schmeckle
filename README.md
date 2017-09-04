@@ -55,6 +55,18 @@ Airflow runs a Flask server as a GUI: http://172.20.0.3:8080/admin/
     # follows format: command subcommand dag_id task_id date
     airflow test tutorial print_date 2017-08-19
 
+    # Initialize the Database
+    airflow initdb
+
+    # Start the web server (default port of 8080)
+    airflow webserver -p 8080
+
+    # Run a task instance
+    airflow run example_bash_operator runme_0 2017-08-19
+
+    # Run a backfill over 2 days (start, end)
+    airflow backfill example_bash_operator -s 2017-08-17 -e 2017-08-19
+
 ### MySQL
 
 Below steps assume MySQL is running on an IP Address of: `172.20.0.2`
