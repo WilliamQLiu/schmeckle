@@ -1,6 +1,6 @@
 # Schmeckle 
 
-$$$
+ETL prototype using Airflow and MySQL
 
 ## Setup
 

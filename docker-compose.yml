@@ -14,7 +14,8 @@ services:
       - db
     command:
       #tail -f /dev/null  # keep container up
-      airflow webserver -p 8080
+      #airflow webserver -p 8080
+      /root/airflow/init_script.sh
 
   db:
     restart: always
