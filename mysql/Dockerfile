@@ -7,6 +7,7 @@ ENV MYSQL_USER=root \
     MYSQL_DATABASE=airflow
 
 # docker-entrypoint-initdb.d is where scripts automatically run on startup
+# Schma created from: mysqldump -u root -p --no-data dbname > airflow_schema.sql
 ADD airflow_schema.sql /docker-entrypoint-initdb.d
 
 EXPOSE 3306

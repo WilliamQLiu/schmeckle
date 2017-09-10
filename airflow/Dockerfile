@@ -16,5 +16,5 @@ RUN pip install -r requirements.txt
 # just having mysql load the airflow schema during creation
 
 # start the web server, default port is 8080
-RUN airflow webserver -p 8080
+#RUN airflow webserver -p 8080
 EXPOSE 8080
