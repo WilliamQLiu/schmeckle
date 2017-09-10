@@ -10,15 +10,16 @@ services:
       - "8080"
     depends_on:
       - db
+    links:
+      - db
     command:
       #tail -f /dev/null  # keep container up
       airflow webserver -p 8080
 
   db:
     restart: always
-    image: mysql:5.7
-    environment:
-        MYSQL_ROOT_PASSWORD: root 
-        MYSQL_DATABASE: schmeckle
-    ports:
-      - "3306:3306"
+    build:
+      context: ./mysql
+      dockerfile: ./Dockerfile
+    expose:
+      - "3306"
