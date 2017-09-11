@@ -2,8 +2,10 @@ FROM ubuntu:16.04
 MAINTAINER Will Liu "william.q.liu@gmail.com"
 RUN apt-get update && apt-get -y upgrade
 RUN apt-get -y install python-pip python-dev build-essential libmysqlclient-dev
-RUN apt-get -y install mysql-client
-#COPY ./requirements.txt /airflow/requirements.txt
+
+# mysql-client needed for mysql connection, libffi-dev for crypto
+RUN apt-get -y install mysql-client libffi-dev
+
 # Copy all configs over
 COPY . /root/airflow/
 WORKDIR /root/airflow
