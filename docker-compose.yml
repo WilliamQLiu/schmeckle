@@ -1,6 +1,14 @@
 version: '2'
 services:
 
+  db:
+    restart: always
+    build:
+      context: ./mysql
+      dockerfile: ./Dockerfile
+    ports:
+      - 3306
+
   airflow:
     restart: always
     build:  # configuration options applied at build time
@@ -17,10 +25,4 @@ services:
       #airflow webserver -p 8080
       /root/airflow/init_script.sh
 
-  db:
-    restart: always
-    build:
-      context: ./mysql
-      dockerfile: ./Dockerfile
-    expose:
-      - "3306"
+  
