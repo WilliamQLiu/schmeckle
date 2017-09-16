@@ -1,6 +1,7 @@
 FROM mysql:5.7.15
 MAINTAINER Will Liu "william.q.liu@gmail.com"
 RUN apt-get update && apt-get -y upgrade
+RUN apt-get -y install vim 
 
 ENV MYSQL_USER=root \
     MYSQL_ROOT_PASSWORD=schmeckle \

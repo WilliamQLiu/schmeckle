@@ -36,9 +36,9 @@ To attach to a running container (so you can see what outputs on the log), speci
 
 ### Airflow
 
-Below steps assume Airflow is running on an IP Address of: `172.20.0.3`
+Below steps assume Airflow is running on an IP Address of: `172.20.0.4`
 
-Airflow runs a Flask server as a GUI: http://172.20.0.3:8080/admin/
+Airflow runs a Flask server as a GUI: http://172.20.0.4:8080/admin/
 
 #### Airflow Commands
 
@@ -70,3 +70,8 @@ Airflow runs a Flask server as a GUI: http://172.20.0.3:8080/admin/
 ### MySQL
 
 Below steps assume MySQL is running on an IP Address of: `172.20.0.2`
+
+### RabbitMQ
+
+Below steps assume RabbitMQ is running on an IP Address of: `172.20.0.3`. A web UI will be available at: `172.20.0.3:15672` with the default login: `guest` and password: `guest`.
+

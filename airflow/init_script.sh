@@ -17,3 +17,4 @@ airflow worker &
 # Run Airflow Webserver
 echo "Running Airflow Webserver"
 airflow webserver -p 8080
+#airflow flower -p 5555

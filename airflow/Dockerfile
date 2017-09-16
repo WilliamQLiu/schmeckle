@@ -13,6 +13,12 @@ RUN export AIRFLOW_HOME=/root/airflow
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
+# run airflow worker by root, don't do on production
+ENV C_FORCE_ROOT true  
+
+# Do not load DAGs examples
+ENV LOAD_EX=n
+
 # initialize the database
 #RUN airflow initdb  # Inits to /root/airflow/ with default configs (e.g. sqlite)
 # We will skip init the db because it'll need to wait for mysql so instead 
@@ -21,3 +27,8 @@ RUN pip install -r requirements.txt
 # start the web server, default port is 8080
 #RUN airflow webserver -p 8080
 EXPOSE 8080
+
+# Celery Flower
+EXPOSE 5555
+
+EXPOSE 8793
