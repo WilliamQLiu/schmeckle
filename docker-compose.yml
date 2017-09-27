@@ -25,6 +25,7 @@ services:
       dockerfile: ./Dockerfile
     expose:
       - "8080"
+      - "5555"
     depends_on:
       - db
       - rabbitmq

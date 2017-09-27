@@ -1,6 +1,7 @@
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator 
+from airflow.operators.bash_operator import BashOperator
 import requests
 import json
 
@@ -8,7 +9,7 @@ import json
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2017, 9, 24),
+    'start_date': datetime.now(),
     'email': ['airflow@airflow.com'],
     'email_on_failure': False,
     'email_on_retry': False,
@@ -32,5 +33,12 @@ def request_github_events(user=None):
     response_json = response.json()
     print response_json
 
+task1 = BashOperator(
+    task_id='print_date',
+    bash_command='date',
+    dag=dag)
 
-task1 = PythonOperator(task_id='get_github_events', provide_context=True, python_callable=request_github_events, dag=dag)
+task2 = PythonOperator(task_id='get_github_events', provide_context=True,
+    python_callable=request_github_events, dag=dag)
+
+task2.set_upstream(task1)
