@@ -55,7 +55,7 @@ ordereddict==1.1
 pandas==0.20.3
 pbr==3.1.1
 protobuf==3.3.0
-psutil==4.4.2
+psutil==5.6.6
 pyasn1==0.3.6
 pyasn1-modules==0.1.4
 pycparser==2.18
