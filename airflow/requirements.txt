@@ -43,7 +43,7 @@ Jinja2==2.8.1
 kombu==3.0.37
 librabbitmq==1.6.1
 lockfile==0.12.2
-lxml==3.8.0
+lxml==4.6.5
 Mako==1.0.7
 Markdown==2.6.9
 MarkupSafe==1.0
