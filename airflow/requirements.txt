@@ -44,7 +44,7 @@ kombu==3.0.37
 librabbitmq==1.6.1
 lockfile==0.12.2
 lxml==3.8.0
-Mako==1.0.7
+Mako==1.2.2
 Markdown==2.6.9
 MarkupSafe==1.0
 mock==2.0.0
